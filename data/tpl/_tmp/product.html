@@ -1,0 +1,268 @@
+[[$head]]
+
+
+<div class="mw content">
+    [[$breadcrumbs]]
+
+    <h1>[[*pagetitle]]</h1>
+
+
+    <div class="prod-top flx -sb">
+
+        <div class="prod-imgs img-max">
+            <a href="[[*image]]" class="ic zoom big" rel="gal"><img src="[[*image]]" alt="[[*pagetitle:escape]]" /></a>
+
+            [[*gallery:isnot=``:then=`
+                <div class="prod-gal _tac">
+                [[!getImageList?
+                &docid=`[[*id]]`
+                &tvname=`gallery`
+                &tpl=`product.gallery.item`
+                &processTVs=`1`
+                ]]
+                </div>
+            `]]
+        </div>
+        <div class="prod-short">
+            <div class="prod-price">
+                1200[[++priceSign]]
+            </div>
+
+            [[+tv.showType:is=`1`:then=`
+            <div class="prod-type">
+                Выбрать тип:<br>
+                <label for="type-[[*id]]-g2">
+                    <input type="radio" name="type-[[*id]]" value="G2" id="type-[[*id]]-g2" checked />
+                    G2</label>
+
+                <input type="radio" name="type-[[*id]]" value="G3" id="type-[[*id]]-g3"/>
+                <label for="type-[[*id]]-g3">G3</label>
+
+                <input type="radio" name="type-[[*id]]" value="G4" id="type-[[*id]]-g4"/>
+                <label for="type-[[*id]]-g4">G4</label>
+            </div>
+            `]]
+            
+            <div class="pl-func mt10">
+                <div class="kolvo">
+                    <i class="minus">-</i>
+                    <i class="plus">+</i>
+                    <input type="text" name="qty" value="1"/>
+                </div>
+                <div class="btn -sh js-to-cart -from-page" data-id="[[*id]]">
+                    купить
+                </div>
+            </div>
+            <div class="prod-in-cart mt10">
+                Выбрано товаров на сумму: <span class="js-cart-prod-itog-[[*id]]">1000</span>[[++priceSign]]
+            </div>
+
+            <div class="mt40">
+                [[*video:isnot=``:then=`
+                    [[!getImageList?
+                    &docid=`[[*id]]`
+                    &tvname=`video`
+                    &tpl=`product.video.item`
+                    &processTVs=`1`
+                    ]]
+                `]]
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <ul class="prod-tabs _z flx mt20 _pz">
+        <li data-tab="property">
+            Характеристики
+        </li>
+        <li data-tab="about">
+            Описание
+        </li>
+        <li data-tab="reviews">
+            Отзывы (123)
+        </li>
+        <li data-tab="docs">
+            Документация
+        </li>
+        <li data-tab="delivery">
+            О доставке
+        </li>
+    </ul>
+
+    <ul class="prod-tabs-content mt20 _z">
+        <li id="tab-property">
+
+            [[*property:isnot=``:then=`
+            <ul class="props-list _z">
+            [[!getImageList?
+                &docid=`[[*id]]`
+                &tvname=`property`
+                &tpl=`product.property.item`
+                &processTVs=`1`
+                ]]</ul>
+            `]]
+
+        </li>
+        <li id="tab-about">
+            [[*content]]
+        </li>
+        <li id="tab-reviews">
+            
+        </li>
+        <li id="tab-docs">
+            [[*property:isnot=``:then=`
+            <ul class="props-list _z">
+                [[!getImageList?
+                &docid=`[[*id]]`
+                &tvname=`docs`
+                &tpl=`product.docs.item`
+                &processTVs=`1`
+                ]]</ul>
+            `]]
+        </li>
+        <li id="tab-delivery">
+            [[$product.delivery]]
+        </li>
+    </ul>
+
+    <div class="reviews">
+        <div class="summ flx -sb">
+            <div>
+                Средний рейтинг товара <div class="rating static" data-def="3"></div>
+                <span>/ 5</span>
+                на основании 1 отзыва
+            </div>
+            <div>
+                <span>99%</span> покупателей рекомендуют этот товар
+            </div>
+        </div>
+
+        <ul class="reviews-list mt30 _z _pz">
+            <li>
+                <div class="-m">
+                    <div class="avatar ic">
+                        <img src="/upload/_del/kusakin.jpg" />
+                    </div>
+                    <p>Сергей</p>
+                    15.08.2018
+                </div>
+                <div class="-r">
+                    <div class="rating -mini" data-def="4"></div>
+                </div>
+                <div class="-t">
+                    <div class="rl-recommend">
+                        <i></i> Я рекомендую этот товар
+                    </div>
+                    <p>Отлично подходит для профиля Веко шириной 70 мм.</p>
+                    <p>Приточная система с фильтром Air-Box ECO предназначена для использования в пластиковых оконных конструкциях для организации воздухообмена с шумозащитой и очисткой приточного воздуха от пыльцы, пыли, спор и сажи в помещениях жилых, общественных и производственных зданий оборудованных вентиляцией с естественным или механическим побуждением.</p>
+
+                    <div class="rl-pm flx -sb">
+                        <div class="plus">
+                            На высоте
+                        </div>
+                        <div class="minus">
+                            Не очень хорошо продумано, так как тут это а там то и вообще хрен поймешь
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="response">
+                <div class="-m">
+                    <div class="avatar ic">
+                        <img src="/data/img/air_avatar.png" />
+                    </div>
+                    <p>Airbox</p>
+                    15.08.2018
+                </div>
+                <!--<div class="-r"></div>-->
+                <div class="-t">
+                    <div class="rl-recommend">
+                        Уважаемый(ая) <span>Сергей</span>
+                    </div>
+                    <p>Наш ответ чемберлену со <a href="">ссылкой</a></p>
+                </div>
+            </li>
+            [[$reviews.item]]
+            [[$reviews.item]]
+        </ul>
+
+        <div class="btn -med js-review-open-form">
+            НАПИСАТЬ ОТЗЫВ
+        </div>
+        <div class="reviews-form">
+            <h4>[[*pagetitle]]</h4>
+            <form class="form" action="" method="post">
+                <div class="flx -sb col-2">
+                    <div class="line">
+                        <p>Оцените товар:</p>
+                        <div class="rating vote" data-def="0"></div>
+                        <input type="hidden" name="rating" value="0" class="save" />
+                    </div>
+                    <div class="line">
+                        <p>Рекомендуете ли вы этот товар другим пользователям?</p>
+                        <div class="rl-pm -inf js-rf-plus-minus">
+                            <div class="plus">
+                                <input type="radio" name="recommend" value="Да" id="rf-pm-1"/>
+                                <label for="rf-pm-1">Да</label>
+                                <div class="rf-pm-checked"></div>
+                            </div>
+                            <div class="minus">
+
+                                <input type="radio" name="recommend" value="Нет" id="rf-pm-0"/>
+                                <label for="rf-pm-0">Нет</label>
+                                <div class="rf-pm-checked"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flx -sb col-2">
+                    <div class="line">
+                        <i></i>
+                        <p>Достоинства:</p>
+                        <input type="text" name="plus" value="" class="save" />
+                    </div>
+                    <div class="line">
+                        <i></i>
+                        <p>Недостатки:</p>
+                        <input type="text" name="minus" value=""  class="save" />
+                    </div>
+                </div>
+                <div class="line">
+                    <i></i>
+                    <p>Комментарий*:</p>
+                    <textarea name="txt" class="save req"></textarea>
+                </div>
+                <div class="flx -sb col-2">
+                    <div class="line">
+                        <i></i>
+                        <p>ФИО*:</p>
+                        <input type="text" name="name" value="" class="save req" />
+                    </div>
+                    <div class="line">
+                        <i></i>
+                        <p>E-mail*:</p>
+                        <input type="text" name="email" value=""  class="save req" />
+                    </div>
+                </div>
+                <div class="line">
+                    <i></i>
+                    <input type="checkbox" name="policy" value="1" id="policy-[[*id]]" class="save req" checked  />
+                    <label for="policy-[[*id]]">Согласен с <a href="/upload/policy.pdf">политикой конифиденциальности</a></label>
+                </div>
+                <div class="btn -med js-submit" data-id="24">
+                    ОТПРАВИТЬ ОТЗЫВ
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--
+            <div class="rating" data-def="0" data-min="1" data-max="5"></div>
+            <br><br>
+            <div class="rating -mini static" data-def="4" data-min="1" data-max="5"></div>
+            -->
+</div>
+
+[[$footer]]

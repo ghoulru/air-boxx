@@ -1,0 +1,56 @@
+@dialogWinZIndex: 10000;
+
+@txtSize: 20px;
+@gBgr: #fff;
+@greyBgr: #d7e9f3;
+
+@sevenColor: #727271;
+
+@txtColor: @sevenColor;
+
+@redColor: #ff402f;
+
+@blueColor: #0060aa;
+@blueColorHover: #127bcc;
+@greenColor: #51ae3a;
+
+@blueTxt: @blueColor;
+
+@linkColor: @blueColor;
+@linkColorHover: @blueColorHover;
+
+@borderColor: #5d6d7a;
+@borderColorHover: darken(@borderColor, 10%);
+
+@footerBorder: #89b6d7;
+
+@priceFontSize: 30px;
+@btn2cartFont: 18px;
+
+@btnPaddingTB: 10px;
+
+@cartBorder: #e0e0e0;
+@cartBorderHover: #0060aa;
+
+@cartActBgr: #e6e6e6;
+
+.btn2cartPTop(@sizePx) when (@sizePx = 16px) {
+  .pTop(8px);
+}
+
+.inputStyle() {
+  @inpHeight: 47px;
+  .border(#dedede);
+  .box(100%, @inpHeight);
+  .baradius(@inpHeight/2);
+  .pTwo(5px, 25px);
+
+}
+
+.fRel(@sizePx, @orgSize: @txtSize) when not (@sizePx = @txtSize) {
+  font-size: round( (@sizePx / @orgSize) * 100%, 1);
+}
+
+.trans() {
+  transition: 300ms;
+}

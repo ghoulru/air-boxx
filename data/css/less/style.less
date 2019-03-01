@@ -1,0 +1,891 @@
+@import 'mixins.less';
+@import 'config.less';
+
+
+
+.menu-wrap {
+  .bgr(@blueColor);
+  .dBlock;
+}
+@menuLinkPaddLeft: 50px;
+.menu {
+  > li {
+    > a {
+      .dBlock;
+      .pTwo(20px, @menuLinkPaddLeft);
+      .clr(#fff);
+      .fWeight(500);
+      .fSize(18px);
+      .tUp;
+
+    }
+
+    &.s {
+      .relative;
+      > a {
+        .relative;
+        .pRight(35px);
+
+        &:after {
+          content: "\25BE";
+          //.fSize(20px);
+          .absolute;
+          right: 5px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+
+    }
+    &:hover, &.active {
+      > a {
+        .bgr(@blueColorHover);
+      }
+    }
+
+
+
+    /*&.right {
+      .flright;
+    }*/
+  }
+}
+
+.menu-sub {
+  .dNone;
+
+  .bgr(@blueColorHover);
+  .mOne(0);
+  .pTwo(10px, 0);
+  list-style: none;
+
+  li {
+    > a {
+      .dBlock;
+      .pTwo(5px, @menuLinkPaddLeft);
+      .noWrap;
+      .fSize(16px);
+      .tUp;
+      .clr(#fff);
+
+      &:hover {
+      	.tdUnd;
+      }
+    }
+  }
+}
+.content {
+  .mt(40px);
+}
+//главный заголовок
+.gnrl-hdr {
+  margin: 0px 0 40px 0;
+  h1 {
+    .zeromp;
+    .tUp;
+    .fs(28px);
+    .fWeight(700);
+  }
+}
+
+
+// схема
+@smallCircleWidth: 105px;
+.scheme {
+  .row {
+    .dFlex;
+    .flexSa;
+    .mBtm(50px);
+    .tac;
+    .relative;
+
+    .line {
+      .absolute;
+      //top: 100%;
+    }
+  }
+}
+.sch-circle {
+  @border: 8px;
+  .relative;
+  .border(#9d9e9e, @border);
+  .circle(125px);
+  .dInline;
+
+  i {
+    .normal;
+    .bold;
+    .fSize(18px);
+    .tac;
+    .tUp;
+    .absolute;
+    .absoluteCenter;
+    .lh(100%);
+  }
+
+  &.b {
+    @s: 175px;
+    .circle(@s);
+    .clr(@blueColor);
+    border-color: @blueColor;
+  }
+  &.g {
+    .clr(@greenColor);
+    border-color: @greenColor;
+  }
+  &.s {
+    .circle(@smallCircleWidth);
+    .mTop(10px);
+    .relative;
+
+    &:nth-child(2) {
+      .mLeft(20px);
+      .mRight(20px);
+    }
+    .-txt {
+      .dBlock;
+      .absolute;
+      .absoluteLeftCenter;
+      //bottom: -10px;
+      top: @smallCircleWidth + 5px;
+      .tUp;
+      .lh(100%);
+      .w(130px);
+    }
+    /*&:after {
+      content: "Confort";
+      .dBlock;
+      .absolute;
+      .absoluteLeftCenter;
+      top: 105%;
+    }*/
+  }
+}
+//
+.schci {
+  @w: 79px;
+  @h: 76px;
+
+  background-image: url(../img/icons_scheme.png);
+  .box(@w, @h);
+
+  &.i2 {.bgrPos(@w * -1, 0)}
+  &.i3 {.bgrPos(@w * -2, 0)}
+
+  &.i4 {.bgrPos(@w * 0, -1 * @h)}
+  &.i5 {.bgrPos(@w * -1, -1 * @h)}
+  &.i6 {.bgrPos(@w * -2, -1 * @h)}
+
+  &.i7 {.bgrPos(@w * 0, -2 * @h)}
+  &.i8 {.bgrPos(@w * -1, -2 * @h)}
+  &.i9 {.bgrPos(@w * -2, -2 * @h)}
+
+}
+
+
+.iprods {
+  //.pTwo(60px, 0);
+}
+
+@PLpriceHeight: 62px;
+@PLBtnsH: 32px;
+@PLrealPaddingBottom: 20px;
+@PLPBtnsSpace: 20px;
+@PLbottomPad: @PLpriceHeight + @PLPBtnsSpace * 2 + @PLBtnsH;
+
+.prod-list {
+  > li {
+    .relative;
+    @bord: #e1e2e2;
+    //.pTwo(15px, 20px);
+    padding: 15px 20px @PLbottomPad 20px;
+    .tac;
+    .w(306px);
+    .border(@bord);
+    .trans;
+    .mBtm(20px);
+
+    .n {
+      .dInline;
+      .lh(110%);
+      .w(80%);
+      .fs(26px);
+      .hMin(45px);
+
+      &:hover {
+      	.clr(@blueColor);
+      }
+    }
+    .ic {
+      .dBlock;
+      .box(100%, 150px);
+    }
+    .a {
+      .lh(105%);
+    }
+    //
+    .p {
+      .absolute;
+      left: 0px;
+      bottom: @PLrealPaddingBottom + @PLBtnsH + @PLPBtnsSpace;
+      .bold;
+      .fSize(41px);
+
+      //.mTop(15px);
+      .h(62px);
+      .w100;
+      .tac;
+
+      div {
+
+        .mTop(5px);
+      }
+    }
+    .m {
+      .tac;
+      .mTop(15px);
+      a {
+        .dInline;
+        .tUp;
+        .tdUnd;
+
+        &:hover {
+          .clr(@greenColor);
+        }
+      }
+    }
+
+    &:hover {
+      .border(darken(@bord, 10%));
+    }
+
+
+  }
+
+
+  @listImgW: 24%;
+  &.-lst {
+    > li {
+      .dFlex;
+      .flexSb;
+      .flexWrap;
+      align-items: stretch;
+      .w100;
+      .tLeft;
+      .pb(15px);
+
+      @imgW: @listImgW;
+      @cw: 60%;
+
+
+      //блоки
+      .im {
+        .w(@imgW);
+      }
+      .c {
+        .w(@cw);
+        //.pTwo(0, 20px);
+        padding: 0 5px 0 20px;
+      }
+      .r {
+        .w(100% - @imgW - @cw);
+        .dFlex;
+        .flexCntr;
+        align-items: center;
+      }
+      //части
+      .n {
+        .dBlock;
+        .w100;
+        .fRel(26px);
+        .hMin(1px);
+        .clr(@txtColor);
+        &:hover {
+          .clr(@blueColor);
+        }
+      }
+      .a {
+        .tLeft;
+        //.mb(25px);
+      }
+
+    }
+  }
+
+}
+//артикулы в карточке товара
+.prod-arts {
+  .zero;
+  .dFlex;
+  justify-content: flex-start;
+  align-items: center;
+  .mb(10px);
+
+  > li {
+    .w(33%);
+    //.bgr();
+    .lh(100%);
+
+
+
+    &:not(:last-child) {
+      //.pr(30px);
+    }
+
+    //@pt: 5px;
+    //&.art {
+    //  .pt(@pt);
+    //}
+    &.montaj {
+      .w(28%)
+    }
+    &.power {
+      .w(40%);
+    }
+    //&.effect {
+    //  .pt(@pt);
+    //}
+  }
+
+  &.tit {
+    .bold;
+    .clr(@blueColor);
+    .mt(20px);
+
+    li {
+      &.montaj {
+        //.pl(7px);
+      }
+    }
+
+
+  }
+  &.t2 {
+    li {
+      @delta: 7%;
+      &.power {
+        .w(33% + @delta);
+      }
+      &.effect {
+        .w(33% - @delta);
+      }
+    }
+  }
+}
+.prod-arts-mobi {
+  .dNone;
+}
+//.prod-arts-tbl {
+//  border-collapse: collapse;
+//  .mt(20px);
+//  th {
+//    .w(33.3%);
+//    .bold;
+//    .clr(@blueColor);
+//    .pTwo(5px, 5px);
+//  }
+//  td {
+//    .pTwo(5px, 5px);
+//  }
+//
+//  @media (max-width: 400px) {
+//    th, td {
+//      .tac;
+//      padding: 5px 3px 5px 3px;
+//      .fs(80%);
+//    }
+//  }
+//}
+
+.flag {
+  .absolute;
+  .z(10);
+
+  &.-sale {
+    .box(125px, 113px);
+    background: url(../img/flag_sale.png);
+    top: -6px;
+    right: -6px;
+  }
+  &.-action {
+    .box(125px, 114px);
+    background: url(../img/flag_action.png);
+    top: -6px;
+    right: -6px;
+  }
+}
+
+
+
+
+footer {
+  .mTop(30px);
+  .pTwo(25px, 0);
+  .bgr(#71706e);
+}
+.ftr-txt {
+  .mTwo(60px, 0);
+  .fs(26px);
+  .tac;
+}
+.footer {
+  .clr(#fff);
+  .fSize(17px);
+
+  li {
+    &.l {
+
+    }
+    &.r {
+      .tRight;
+      .w(60%);
+    }
+  }
+
+  a {
+    .clr(#fff);
+  }
+
+
+}
+
+
+
+
+
+//////////////////////////////////////////
+//// страница товара
+.prod-top {
+  .bt(#dbdbdb);
+  .pt(30px);
+  .mt(30px);
+  .relative;
+}
+@prodImgW: 50%;
+.prod-imgs {
+  .w(@prodImgW);
+  .big {
+    .dBlock;
+    .h(350px);
+    //.bgr(#b4e0ff);
+  }
+}
+.prod-gal-wrap {
+  .relative;
+  .mTop(10px);
+}
+.pg-arr {
+  @s: 32px;
+  .dNone;
+  .circle(@s);
+  background-color: @blueColor;//#d7e9f3;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  .absolute;
+  .absoluteTopCenter;
+  .trans;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &.next {
+    background-image: url(../img/chevron_r.png);
+    right: 0px;
+  }
+  &.prev {
+    background-image: url(../img/chevron_l.png);
+    left: 0px;
+  }
+
+  &:hover {
+    background-color: @blueColorHover;
+    .pointer;
+  }
+}
+.prod-gal-container {
+  .w(84%);
+  margin: 0 auto;
+}
+.prod-gal {
+
+  a {
+    .dInline;
+    .vtop;
+    .mOne(3px);
+    .box(120px, 85px);
+    &:hover {
+
+    }
+  }
+}
+.prod-short {
+  .w(94% - @prodImgW);
+  .fs(18px);
+}
+.prod-art {
+  .fs(20px);
+  .mb(25px);
+
+  b {
+    .clr(@blueColor);
+    .bold;
+  }
+}
+.prod-video {
+  > * {
+    .mb(20px);
+
+    p {
+      .bold;
+      .mb(20px);
+    }
+    iframe {
+      .hMin(250px);
+    }
+  }
+}
+.prod-docs {
+
+  @icoDelta: 47/57;
+  @icoW: 30px;
+  @icoH: @icoW / @icoDelta;
+  a {
+    .dBlock;
+    background: url(../img/ext-pdf.png) left center no-repeat;
+    background-size: @icoW @icoH;
+    .fSize(17px);
+    .clr(@blueTxt);
+    .bold;
+    @p: 10px;
+    padding: @p 0 @p 50px;
+    .mb(15px);
+    .tdNone;
+    .relative;
+    .hMin(@icoH);
+
+    @borderStyle: dotted;
+    //span {
+    //  .bb(@blueTxt, 1px, @borderStyle);
+    //}
+    &:hover {
+      .clr(@greenColor);
+      //span {
+      //  .bb(@greenColor, 1px, @borderStyle);
+      //}
+    }
+
+  }
+
+}
+
+.prod-tabs {
+  a {
+    .tdNone;
+    .mRight(10px);
+    .pTwo(15px, 30px);
+    .bgr(#d6e3e9);
+    .border(#d6e3e9);
+    .clr(#0d7fb2);
+    .fRel(17px);
+    .bold;
+    &.active {
+      .bgr(#fff);
+    }
+    &:hover {
+      .bgr(#e1eff5);
+    }
+  }
+}
+
+////// ХАРАКТЕРИСТИКИ
+#tab-property {
+  h2 {
+    margin: 0 0 15px 0;
+    padding: 0;
+  }
+}
+.props-list {
+  margin: 0 0 30px 0 !important;
+  padding: 0 !important;
+  li {
+    .dFlex;
+    .relative;
+    .mBtm(10px);
+    > div {
+      .w(50%);
+
+      span {
+        padding:0 2px 1px 0;
+        .bgr(#fff);
+      }
+
+    }
+
+    &:not(.subhdr) {
+      &:after {
+        content: "";
+        .absolute;
+        bottom: 4px;
+        left: 0;
+        .z(-1);
+        .w(49.5%);
+        .h(1px);
+        .bt(@txtColor, 1px, dotted);
+      }
+    }
+
+
+  }
+}
+
+
+
+///Видео
+.video-list {
+  li {
+    .mBtm(40px);
+    .t {
+      .tCenter;
+      .mBtm(20px);
+    }
+    .v {
+      .h(300px)
+    }
+  }
+}
+
+@docsBorder: #dbdbdb;
+@docsAndWhereBuyFontSize: 18px;
+//////// список документации
+.docs {
+  .bt(@docsBorder);
+  li {
+    .bb(@docsBorder);
+    .pTwo(20px, 0);
+
+    //.fs(18px);
+    .dFlex;
+    .flexSb;
+    align-items: center;
+    //.flexWrap;
+
+    .t {
+      flex-grow: 1;
+      br {
+        .dNone;
+      }
+    }
+    .f {
+      //.w(47px);
+      .tLeft;
+      .mr(20px);
+    }
+    .d {
+      .fs(18px);
+      //.w(80px);
+      .bold;
+      a {
+        .clr(@blueColor);
+        //.pl(20px);
+      }
+    }
+  }
+}
+// где купить
+.wbuy-hdr {
+  .bb(@docsBorder);
+  .pb(10px);
+  .mb(10px);
+  .tUp;
+}
+.wbuy {
+  .mb(50px);
+  li {
+    //.w(30%);
+
+    //.pTwo(15px, 0);
+    > * {
+      .dBlock;
+      //.mt()
+    }
+    .t {
+
+      .n {
+        .bold;
+        .clr(@blueColor);
+      }
+    }
+    .p {
+
+    }
+    .e {
+
+    }
+    .a {
+      .bold;
+      //.tac;
+      .mt(10px);
+    }
+  }
+}
+//каждый элемент в строку
+//.wbuy {
+//  .bt(#dbdbdb);
+//
+//  li {
+//    .pTwo(15px, 0);
+//    .bb(@docsBorder);
+//    .dFlex;
+//    .flexSb;
+//    .flexWrap;
+//    align-items: center;
+//    > * {
+//      .w(24%);
+//    }
+//    a {
+//
+//    }
+//    .t {
+//
+//      .n {
+//        .bold;
+//        .clr(@blueColor);
+//      }
+//    }
+//    .p {
+//
+//    }
+//    .e {
+//
+//    }
+//    .a {
+//      .bold;
+//      .tac;
+//    }
+//  }
+//}
+
+///для совместимости
+.brands-select {
+  .relative;
+  .wMin(200px);
+  @h: 40px;
+
+  .tit {
+    .clr(@blueColor);
+    .pointer;
+    .h(@h);
+    .lh(@h);
+    span {
+      .bb(@blueColor, 1px, dotted);
+    }
+  }
+  .sel {
+    .dNone;
+
+    .border(@greyBgr);
+    .baradius(3px);
+    .bgr(#fff);
+    .absolute;
+    top: 100%;
+    .pTwo(5px, 0);
+    .wMin(100%);
+
+    a {
+      .dBlock;
+      .pTwo(5px, 10px);
+      .tdNone;
+      .clr(@txtColor);
+      .noWrap;
+      .fs(18px);
+      &:hover {
+        .bgr(#f7f7f7);
+      }
+    }
+  }
+}
+.sovm-show-all {
+  .bb(@blueColor, 1px, dotted);
+  .tdNone;
+}
+.sovm-tables {
+  .mt(20px);
+  @bc: @greyBgr;
+
+  table {
+    .w100;
+    .bt(@bc);
+    .bl(@bc);
+    td {
+      .pTwo(5px, 10px);
+      .br(@bc);
+      .bb(@bc);
+    }
+    th {
+      .bold;
+      .pTwo(5px, 10px);
+      .tLeft;
+      .br(@bc);
+      .bgr(@bc);
+      .clr(@blueColor);
+      //.bb(@bc, 3px);
+    }
+  }
+}
+.sovm-tbl {
+  //.dNone;
+  .mb(20px);
+}
+.princip-item {
+  .mb(40px);
+  .flexCntr;
+  > * {
+    .w(40%);
+    margin:0 20px;
+  }
+  .img-max {
+    .tRight;
+  }
+  p {
+    .mTwo(5px, 0);
+  }
+}
+
+.scheme-img {
+  @h: 320px;
+  .-h {
+    background: url(../img/schm-hdr-circle.png) center center no-repeat;
+    .w100;
+    .hMin(184px);
+  }
+  .-l {
+    background: url(../img/schm-hdr-lines.png) center center no-repeat;
+    background-size: 67%;
+    .w100;
+    .hMin(53px);
+  }
+  .s1 {
+    background: url(../img/schm-1.png) center center no-repeat;
+    .w(33.33%);
+    .h(@h);
+    background-size: contain;
+  }
+  .s2 {
+    background: url(../img/schm-2.png) center center no-repeat;
+    .w(33.33%);
+    .h(@h);
+    background-size: contain;
+  }
+  .s3 {
+    background: url(../img/schm-3.png) center center no-repeat;
+    .w(33.33%);
+    .h(@h);
+    background-size: contain;
+  }
+}
+

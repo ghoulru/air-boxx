@@ -1,0 +1,86 @@
+@media only screen and (min-width: 1200px) {
+  .mw {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .dhide {
+    display: none !important;
+  }
+  .scheme-wrap {
+    margin-top: 70px;
+  }
+  .sch-circle.s {
+    margin-top: 50px;
+  }
+  .header-fix {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9500;
+    height: 168px;
+  }
+  header {
+    background: #ffffff;
+  }
+  .mobile-menu {
+    display: none;
+  }
+  .menu-wrap {
+    overflow: hidden;
+  }
+  .menu-wrap .-max {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    -ms-flex-pack: center;
+    align-items: center;
+  }
+  .menu > li {
+    margin: 0 10px;
+  }
+  .menu > li:hover .menu-sub {
+    display: block;
+  }
+  .menu-sub {
+    position: absolute;
+    left: 0;
+    top: 99%;
+    z-index: 10;
+  }
+  .menu-btn {
+    float: right;
+    margin: 10px 0;
+  }
+  .props-list li div:first-child {
+    width: 50%;
+  }
+  .props-list li div:last-child {
+    width: 50%;
+  }
+  .props-list li:after {
+    width: 50%;
+  }
+  .prod-arts li:first-child {
+    width: 26%;
+  }
+  .docs li {
+    padding-left: 20px;
+    padding-right: 80px;
+  }
+  .docs li .f {
+    margin-right: 20px;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .wbuy li {
+    padding: 0px 20px;
+  }
+}

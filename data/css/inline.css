@@ -1,0 +1,56 @@
+html {
+  box-sizing: border-box;
+  moz-box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+  background: #ffffff;
+  color: #727271;
+  margin: 0;
+  padding: 0;
+}
+header {
+  padding: 20px 0;
+  font-size: 16px;
+}
+header .s {
+  font-size: 130%;
+  color: #0060aa;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+header .r {
+  font-size: 22px;
+  line-height: 120%;
+  text-align: right;
+  padding-right: 55px;
+  background: url(/data/img/ico-sert.png) right center no-repeat;
+}
+.hdr-phone {
+  font-size: 110%;
+  color: #5b5b5b;
+}
+.hdr-phone a {
+  text-decoration: none;
+  color: #5b5b5b;
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+@media only screen and (min-width: 1200px) {
+  .logo {
+    width: 190px;
+  }
+  header .s {
+    width: 560px;
+  }
+  header .r {
+    width: 400px;
+  }
+}

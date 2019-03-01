@@ -1,0 +1,143 @@
+@import 'mixins.less';
+@import 'config.less';
+
+
+@media only screen and (min-width: 1200px) {
+  @maxWidth: 1200px;
+
+  .mw {
+    .w(@maxWidth);
+    .cntr;
+  }
+
+  .dhide {
+    .dNone !important;
+  }
+
+  .scheme-wrap {
+    .mTop(70px);
+  }
+
+  .sch-circle {
+    &.s {
+      .mTop(50px);
+    }
+  }
+
+
+  .header-fix {
+    //&.fixed {
+    //  .fixed;
+    //  .w100;
+    //  top: 0;
+    //  .z(@dialogWinZIndex - 500);
+    //  .bgr(#fff);
+    //  .h(170px);
+    //}
+    .fixed;
+    .w100;
+    top: 0;
+    .z(@dialogWinZIndex - 500);
+
+    .h(168px);
+
+  }
+  header {
+    .bgr(#fff);
+  }
+  .mobile-menu {
+    .dNone;
+  }
+  .menu-wrap {
+    .overflow;//убрать при показе меню, а то не будет подменю видно
+    .-max {
+      .w(@maxWidth);
+      .cntr;
+    }
+  }
+  .menu {
+    .dFlex;
+    .flexCntr;
+
+    align-items: center;
+    > li {
+      .mTwo(0, 10px);
+      &:hover {
+        .menu-sub {
+          .dBlock;
+        }
+      }
+    }
+  }
+  .menu-sub {
+    .absolute;
+    left: 0;
+    top: 99%;
+    .z(10);
+  }
+  .menu-btn {
+    .flright;
+    //.pTop(12px);//при показе вернуть это
+    .mTwo(10px, 0);//убрать это при  показе меню
+
+  }
+
+
+  .props-list {
+    li {
+      @w: 50%;
+
+      div {
+
+        &:first-child {
+          .w(@w);
+        }
+        &:last-child {
+          .w(100% - @w);
+        }
+      }
+      &:after {
+        .w(@w);
+      }
+    }
+  }
+  .prod-arts {
+    li {
+
+      &:first-child {
+        .w(26%);
+      }
+    }
+  }
+  .docs {
+    @p: 20px;
+    li {
+      .pl(@p);
+      .pr(@p + 60px);
+      .f {
+        .mr(20px);
+      }
+    }
+  }
+}
+@media only screen and (min-width: 750px) {
+
+  //.docs {
+  //  @p: 20px;
+  //  li {
+  //
+  //    .t {
+  //      //.pl(@p);
+  //    }
+  //    .f {
+  //      //.w(47px + @p);
+  //      //.mr(40px);
+  //    }
+  //  }
+  //}
+  .wbuy {
+    li {
+      .pTwo(0px, 20px);
+    }
+  }
+}

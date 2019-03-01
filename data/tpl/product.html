@@ -1,0 +1,143 @@
+[[$head]]
+
+
+<div class="mw content">
+    <div class="gnrl-hdr">
+        <h1>[[*pagetitle]]</h1>
+    </div>
+
+
+    <div class="prod-top flx -sb">
+        [[*flag:ne=``:then=`<div class="flag -[[*flag]]"></div>`]]
+        <div class="prod-imgs img-max">
+            <a href="[[*image]]" class="ic zoom big" rel="gal"><img src="[[*image]]" alt="[[*pagetitle:escape]]" /></a>
+
+            [[*gallery:isnot=``:then=`
+                <div class="prod-gal-wrap">
+                    <div class="pg-arr prev"></div>
+                    <div class="pg-arr next"></div>
+                    <div class="prod-gal-container"><div class="prod-gal _tac">
+                [[!getImageList?
+                &docid=`[[*id]]`
+                &tvname=`gallery`
+                &tpl=`product.gallery.item`
+                &processTVs=`1`
+                ]]
+                </div></div></div>
+            `]]
+        </div>
+        <div class="prod-short">
+            <div class="prod-art">
+                [[*article:ne=``:then=`<b>Артикул</b> [[*article]]`]]
+            </div>
+
+            [[*introtext:nl2br]]
+
+
+            <div class="mt20 prod-video">
+                [[*video:isnot=``:then=`
+                    [[!getImageList?
+                    &docid=`[[*id]]`
+                    &tvname=`video`
+                    &tpl=`product.video.item`
+                    &processTVs=`1`
+                    ]]
+                `]]
+            </div>
+
+        </div>
+
+    </div>
+
+    {var $sovm='sovmestimost' | snippet}
+
+
+    <div class="prod-tabs-container theme-default mt20">
+        <div class="prod-tabs ft-nav _z flx  _pz">
+
+            <a href="#property" class="js-active-on-load">Характеристики</a>
+
+            [[*docs:ne=``:then=`
+            <a href="#docs" >Документация</a>
+            `]]
+            {if $sovm[0]}
+            <a href="#sovm">Совместимость</a>
+            {/if}
+
+
+            [[*princip:ne=``:then=`
+            <a href="#princip" >Принцип работы</a>
+            `]]
+
+
+        </div>
+
+        <div class="ft-contents mt40">
+
+            <div id="property" class="text">
+                [[*property:ne=``:then=`
+                <h2>Технические характеристики</h2>
+                <ul class="props-list _z">
+                    [[!getImageList?
+                    &docid=`[[*id]]`
+                    &tvname=`property`
+                    &tpl=`product.property.item`
+                    &processTVs=`1`
+                    ]]</ul>
+                `]]
+                [[*package_snoska]]
+                [[*complect:isnot=``:then=`
+                <h2>Комплектация</h2>
+                <ul class="props-list _z">
+                [[!getImageList?
+                &docid=`[[*id]]`
+                &tvname=`complect`
+                &tpl=`product.property.item`
+                &processTVs=`1`
+                ]]</ul>
+                `]]
+                [[*package:isnot=``:then=`
+                <h2>Транспортная упаковка</h2>
+                <ul class="props-list _z">
+                    [[!getImageList?
+                    &docid=`[[*id]]`
+                    &tvname=`package`
+                    &tpl=`product.property.item`
+                    &processTVs=`1`
+                    ]]</ul>
+                `]]
+            </div>
+            <div id="docs" class="text">
+                [[*docs:ne=``:then=`
+                <div class="prod-docs">
+                    [[!getImageList?
+                    &docid=`[[*id]]`
+                    &tvname=`docs`
+                    &tpl=`prod.docs.item`
+                    &processTVs=`1`
+                    ]]
+                </div>
+                `]]
+            </div>
+            <div id="sovm" class="text">
+                {$sovm[1]}
+            </div>
+
+            <div id="princip">
+                [[!getImageList?
+                &docid=`[[*id]]`
+                &tvname=`princip`
+                &tpl=`princip.item`
+                &processTVs=`1`
+                ]]
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+[[$footer]]

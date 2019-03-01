@@ -1,0 +1,87 @@
+@import 'mixins.less';
+@import 'config.less';
+html {
+  box-sizing: border-box;
+  moz-box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+//@font-face {
+//  font-family: 'Circe';
+//  src: url('/data/css/fonts/Circe-Regular.woff2') format('woff2'),
+//  url('/data/css/fonts/Circe-Regular.woff') format('woff'),
+//  url('/data/css/fonts/Circe-Regular.ttf') format('truetype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: 'Circe';
+//  src: url('/data/css/fonts/Circe-Bold.woff2') format('woff2'),
+//  url('/data/css/fonts/Circe-Bold.woff') format('woff'),
+//  url('/data/css/fonts/Circe-Bold.ttf') format('truetype');
+//  font-weight: bold;
+//  font-style: normal;
+//}
+body {
+  .fSize(@txtSize);
+  font-family: 'PT Sans', sans-serif;
+  background: @gBgr;
+  .clr(@txtColor);
+  .zeromp();
+}
+
+
+header {
+  padding: 20px 0;
+  .fSize(16px);
+
+  .s {
+    .fRel(26px);
+    .clr(@blueColor);
+    .bold;
+    .tUp;
+    //flex-grow: 1;
+  }
+  .r {
+    .fs(22px);
+    .lh(120%);
+    .tRight;
+    .pr(55px);
+    background: url(/data/img/ico-sert.png) right center no-repeat;
+  }
+}
+@hdrTxtColor: #5b5b5b;
+.logo {
+
+}
+.hdr-phone {
+  //.fSize(16px);
+  .fRel(22px);
+  .clr(@hdrTxtColor);
+
+  a {
+    .tdNone;
+    .clr(@hdrTxtColor);
+    .fSize(24px);
+    .fWeight(700);
+    .mRight(10px);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .logo {
+    .w(190px);
+  }
+
+  header {
+    .s {
+      .w(560px);
+      //.noWrap;
+    }
+    .r {
+      .w(400px);
+    }
+  }
+}

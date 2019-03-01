@@ -1,0 +1,102 @@
+<li>
+	[[+tv.flag:ne=``:then=`<div class="flag -[[+tv.flag]]"></div>`]]
+    <a href="[[+link]]" class="im ic">
+        <img src="[[+tv.image]]" alt="[[+pagetitle:escape]]" />
+    </a>
+    <div class="c">
+        <a href="[[+link]]" class="n">
+            [[+pagetitle]]
+        </a>
+        <div class="a">
+
+            [[--+introtext:isnot=``:then=`<strong>В комплекте:</strong><br>[[+introtext:nl2br]]`]]
+
+            <div class="prod-arts-desk">
+                [[+tv.articles.type:ne=`0`:then=`
+                [[!getImageList?
+                &docid=`[[+id]]`
+                &tvname=`product-articles`
+                &wrapperTpl=`product.articles.wrap_[[+tv.articles.type]]`
+                &tpl=`product.articles_[[+tv.articles.type]]`
+                &processTVs=`1`
+                ]]
+                `]]
+            </div>
+            [[+tv.prod-arts-mobi]]
+
+            [[--<ul class="prod-arts-mobi _z _pz">
+                <li>
+                    <div class="-n">
+                        Артикул
+                    </div>
+                    <div class="-v">
+                        <p>AIR0030.07</p>
+                        <!--<p>AIR0030.07</p>-->
+                        <!--<p>AIR0030.07</p>-->
+                    </div>
+                </li>
+                <li>
+                    <div class="-n">
+                        Тип монтажа
+                    </div>
+                    <div class="-v">
+                        <p>с фрезеровкой</p>
+                        <!--<p>без фрезеровки</p>-->
+                        <!--<p>-</p>-->
+                    </div>
+                </li>
+                <li>
+                    <div class="-n">
+                        Производительность
+                    </div>
+                    <div class="-v">
+                        <p>до 40м3/ч</p>
+                        <!--<p>до 54м3/ч</p>-->
+                        <!--<p>до 60м3/ч</p>-->
+                    </div>
+                </li>
+            </ul>]]
+
+            [[--<table class="prod-arts-tbl">
+                <tr>
+                    <th>
+                        Артикул
+                    </th>
+                    <th>
+                        Тип монтажа
+                    </th>
+                    <th>
+                        Произво&shy;дительность
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        AIR0030.07
+                    </td>
+                    <td>
+                        с фрезеровкой
+                    </td>
+                    <td>
+                        до 42 м3/ч
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        AIR0030.07
+                    </td>
+                    <td>
+                        без фрезеровки
+                    </td>
+                    <td>
+                        до 60 м3/ч
+                    </td>
+                </tr>
+            </table>]]
+
+        </div>
+    </div>
+    <div class="r">
+        <a href="[[+link]]" class="btn more -sh">подробнее</a>
+    </div>
+
+</li>

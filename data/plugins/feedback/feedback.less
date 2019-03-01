@@ -1,0 +1,89 @@
+@import '../../css/less/mixins.less';
+@import '../../css/less/config.less';
+/////////////////////
+
+.form {
+
+  .line {
+    .relative;
+    .mBtm(15px);
+    > i {
+      .dNone;
+      .absolute;
+      top: 0px;
+      right: 0px;
+      .bgr(red);
+      .clr(#fff);
+      .pTwo(3px, 10px);
+
+      font-style: normal;
+      .fSize(13px);
+      .noWrap;
+
+    }
+    //заголовок поля
+    .t {
+      .mBtm(5px);
+      sup {
+        .clr(@txtColor);
+      }
+      &.-b {
+        .bold
+      }
+    }
+    p {
+      .bold;
+      .fRel(20px);
+      .pOne(0);
+      margin: 0 0 15px 0;
+    }
+    //поле
+    .f {
+
+    }
+
+  }
+  input[type=text], input[type=tel], input[type=email], input[type=password], textarea, select {
+    .inputStyle();
+    resize: none;
+    &:focus {
+      .br(#e2e2e2);
+      .bb(#e2e2e2);
+      box-shadow: inset 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+
+
+  textarea {
+    .h(130px);
+  }
+
+
+  @btnH: 42px;
+  .btn {
+    .pTwo(0px, 33px);
+    .h(@btnH);
+    .baradius(@btnH/2);
+    //.clr(@greenColor);
+    .fSize(18px);
+    .bold;
+    .lh(@btnH * 1);
+  }
+
+  .ftr {
+    .fSize(12px);
+    .mTop(25px);
+  }
+
+  a {
+    .clr(@blueColor);
+  }
+
+  .snoska {
+    .clr(@blueColor);
+  }
+  //POPUP
+
+
+}

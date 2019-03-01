@@ -1,0 +1,34 @@
+[[$head]]
+
+
+<div class="mw content">
+    <div class="gnrl-hdr">
+        <h1>[[*pagetitle]]</h1>
+    </div>
+
+
+    <div class="iprods">
+
+        [[pdoResources?
+        &parents=`[[*id]]`
+        &depth=`1`
+        &limit=`0`
+        &includeTVs=`image,flag,product-articles,articles.type,prod-arts-mobi,xxx`
+        &showHidden=`0`
+        &sortby=`menuindex`
+        &sortdir=`ASC`
+        &useWeblinkUrl=`1`
+
+        &tplWrapper=`@INLINE <ul class="prod-list -lst _z _pz _an">[[+output]]</ul>`
+        &tpl=`cat-item.list`
+        ]]
+
+    </div>
+
+    [[*content:ne=``:then=`<article>[[*content]]</article>`]]
+
+
+</div>
+
+
+[[$footer]]
