@@ -25,13 +25,6 @@ a:focus {
 a img {
   border: none;
 }
-h1 {
-  font-size: 28px;
-  line-height: 100%;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-}
 button {
   border: none;
 }
@@ -308,9 +301,17 @@ hr {
 .hide {
   display: none;
 }
+h1 {
+  font-size: 28px;
+  line-height: 100%;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
 .hdr,
 h2,
-h3 {
+h3,
+.h2 {
   font-size: 26px;
   position: relative;
   padding-bottom: 0px;
@@ -1132,7 +1133,7 @@ footer {
   padding: 0;
 }
 .props-list {
-  margin: 0 0 30px 0 !important;
+  margin: 0 0 40px 0 !important;
   padding: 0 !important;
 }
 .props-list li {
@@ -1159,6 +1160,10 @@ footer {
   width: 49.5%;
   height: 1px;
   border-top: #727271 1px dotted;
+}
+.snoska {
+  margin: -30px 0 40px 0;
+  font-style: italic;
 }
 .video-list li {
   margin-bottom: 40px;
@@ -1308,6 +1313,7 @@ footer {
   background-size: 67%;
   width: 100%;
   min-height: 53px;
+  margin: -2px 0 -2px 10px;
 }
 .scheme-img .s1 {
   background: url(../img/schm-1.png) center center no-repeat;
@@ -1327,6 +1333,12 @@ footer {
   height: 320px;
   background-size: contain;
 }
+.page-menu p {
+  font-weight: bold;
+}
+.page-menu a {
+  display: block;
+}
 @media only screen and (min-width: 1200px) {
   .mw {
     width: 1200px;
@@ -1342,12 +1354,12 @@ footer {
   .sch-circle.s {
     margin-top: 50px;
   }
-  .header-fix {
+  .header-fix.fixed {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 9500;
-    height: 168px;
+    z-index: 500;
+    background: #ffffff;
   }
   header {
     background: #ffffff;

@@ -457,7 +457,7 @@ footer {
   padding: 0;
 }
 .props-list {
-  margin: 0 0 30px 0 !important;
+  margin: 0 0 40px 0 !important;
   padding: 0 !important;
 }
 .props-list li {
@@ -484,6 +484,10 @@ footer {
   width: 49.5%;
   height: 1px;
   border-top: #727271 1px dotted;
+}
+.snoska {
+  margin: -30px 0 40px 0;
+  font-style: italic;
 }
 .video-list li {
   margin-bottom: 40px;
@@ -633,6 +637,7 @@ footer {
   background-size: 67%;
   width: 100%;
   min-height: 53px;
+  margin: -2px 0 -2px 10px;
 }
 .scheme-img .s1 {
   background: url(../img/schm-1.png) center center no-repeat;
@@ -651,4 +656,10 @@ footer {
   width: 33.33%;
   height: 320px;
   background-size: contain;
+}
+.page-menu p {
+  font-weight: bold;
+}
+.page-menu a {
+  display: block;
 }

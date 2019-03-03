@@ -16,7 +16,11 @@ $(document).ready(function() {
         //Scheme.init(isMobile);
     });
 
+    setTimeout(function(){
+        App.header();
+    }, 1500);
 });
+
 
 var dataLayer = dataLayer || [];//используется для ecommerce в Яндекс.Метрике
 
@@ -284,220 +288,46 @@ App.header = function() {
         return;
 
     var head  = $('.header-fix');
+    var header = $('header');
     var headHeight = head.outerHeight();
-    var topPos2FixedHead = 50;//headHeight;
 
-    var bodyPTop = headHeight + 0;
-    // console.log($('header').height());
-    //
-    // console.log($('header').outerHeight() + '/' + $('.menu').outerHeight());
+    var headerHeight = header.outerHeight();
+    var topPos2FixedHead = headerHeight;
+    var menuHeight = $('.menu-wrap').outerHeight();
+    var bodyPTop = menuHeight + 100;
+
     
-    console.log('headHeight: ' + headHeight);
-    head.addClass('fixed');
-    $('body').css('padding-top', bodyPTop);
-    // if ($(window).scrollTop() > topPos2FixedHead) {
-    //     head.addClass('fixed');
-    //     $('body').css('padding-top', bodyPTop);
-    // }
-    // $(window).scroll(function() {
-    //     if ($(window).scrollTop() > topPos2FixedHead) {
-    //         if (!head.hasClass('fixed')) {
-    //             //head.addClass('fixed');
-    //             $('body').css('padding-top', bodyPTop);
-    //
-    //             head.addClass('fixed');
-    //                 // .css('top', -headHeight + 'px')
-    //                 // .animate({
-    //                 //     top: '0px'
-    //                 // });
-    //
-    //         }
-    //     }
-    //     else if($(window).scrollTop() <= topPos2FixedHead / 2) {
-    //         if (head.hasClass('fixed')) {
-    //             head.removeClass('fixed');
-    //             $('body').css('padding-top', 0);
-    //         }
-    //     }
-    // });
+    console.log('head all Height: ' + headHeight  +' header:' + headerHeight + '/ bodyPTop: ' + bodyPTop);
+    // head.addClass('fixed');
+    // $('body').css('padding-top', bodyPTop);
+    if ($(window).scrollTop() > topPos2FixedHead) {
+        head.addClass('fixed');
+        header.hide();
+        $('body').css('padding-top', bodyPTop);
+    }
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > topPos2FixedHead) {
+            if (!head.hasClass('fixed')) {
+                //head.addClass('fixed');
+                $('body').css('padding-top', bodyPTop);
+
+                head.addClass('fixed');
+                header.hide();
+                // header.slideUp(function(){
+                //     $('body').css('padding-top', bodyPTop);
+                // });
+            }
+        }
+        else if($(window).scrollTop() <= topPos2FixedHead / 2) {
+            if (head.hasClass('fixed')) {
+                head.removeClass('fixed');
+                $('body').css('padding-top', 0);
+                header.show();
+            }
+        }
+    });
 };
-//
-// var Scheme = {
-//     blueColor: '#0060aa',
-//     greyColor: '#9d9e9e',
-//     lineWidth: 3,
-//     verticalSpace: 50,
-//     circleBorderWidth: 8,
-//     init: function (isMobile) {
-//
-//         if (!$('.scheme').length)
-//             return;
-//
-//         if (!isMobile)
-//             this.drawLinesDesktop();
-//         else
-//             this.drawLinesMobile();
-//
-//     },
-//     drawLinesDesktop: function() {
-//         var self = this;
-//         this.drawLinesRow1(this);
-//
-//         $('#row2 > div').each(function() {
-//             self.drawLinesRow2(
-//                 self,
-//                 $(this).children('.sch-circle:first-child')
-//             );
-//         });
-//     },
-//
-//     drawLinesRow1: function(self) {
-//
-//         var row = $('#row1');
-//         var circle = row.children('.sch-circle:first-child');
-//         var rowIndex = row.index();
-//         //var rowWidth = row.outerWidth();
-//         var rowHeight = row.outerHeight();
-//         //var circleWidth = circle.outerWidth();
-//         //var circleHeight = circle.outerHeight();
-//
-//         var nextRow = $('.scheme .row').eq(rowIndex + 1);
-//         var nextRowWidth = nextRow.outerWidth();
-//         var leftBlock = nextRow.children('div:first-child');
-//         var nextPosLeft = leftBlock.position().left;
-//         if (nextPosLeft < 0)
-//             nextPosLeft = 0;
-//         var leftBlockHalf = leftBlock.width() / 2;
-//
-//
-//
-//         var nextRowHalfWidthPos = (nextPosLeft + leftBlockHalf);
-//         var hLineWidth = nextRowWidth - nextRowHalfWidthPos * 2 + 2;
-//         //var hLineWidth = rowWidth - nextRowHalfWidthPos * 2;
-//
-//         //console.log('nextRowWidth: ' + nextRowWidth+' / nextPosLeft: '+nextPosLeft + ' / leftBlockHalf: ' + leftBlockHalf);
-//
-//         var halfHeight = (rowHeight + self.verticalSpace / 2);
-//
-//         var hLinePosLeft = leftBlockHalf + nextPosLeft;// - self.circleBorderWidth * 3;
-//         //var hLinePosLeft = nextPosLeft - 2 * leftBlockHalf + self.circleBorderWidth * 2 - 4;//1 * (circleWidth / 2);
-//         //var hLinePosLeft = halfHeight;
-//         //console.log('hLineWidth: ' + hLineWidth + ' / hLinePosLeft: ' + hLinePosLeft);
-//         //горизонтальная линия
-//         this.hline(
-//             row,
-//             hLineWidth,
-//             self.blueColor,
-//             halfHeight,
-//             hLinePosLeft
-//         );
-//         //3 верт линии
-//         this.vline(
-//             row,
-//             self.verticalSpace / 2,
-//             self.blueColor,
-//             halfHeight,
-//             nextRowHalfWidthPos
-//         );
-//         this.vline(
-//             row,
-//             self.verticalSpace,
-//             self.blueColor,
-//             rowHeight,
-//             nextRowHalfWidthPos * 3
-//         );
-//         this.vline(
-//             row,
-//             self.verticalSpace / 2,
-//             self.blueColor,
-//             halfHeight,
-//             nextRowHalfWidthPos * 5
-//         );
-//     },
-//
-//     drawLinesRow2: function(self, row, isMobile) {
-//
-//         var rowHeight = row.outerHeight();
-//
-//
-//
-//         var nextRow = row.next('.row');
-//         var nextRowWidth = nextRow.outerWidth();
-//         //console.log('nextRowWidth: '+ nextRowWidth + ' / rowHeight: ' + rowHeight);
-//
-//
-//         var leftBlock = nextRow.children('.sch-circle:first-child');
-//         var nextPosLeft = leftBlock.position().left;
-//         var leftBlockHalf = leftBlock.outerWidth() / 2;
-//
-//         //console.log(nextPosLeft + ' / leftBlockHalf: ' + leftBlockHalf);
-//
-//         var nextRowHalfWidthPos = (nextPosLeft + leftBlockHalf);
-//         var hLineWidth = nextRowWidth - nextRowHalfWidthPos * 2;
-//
-//         var halfHeight = (rowHeight + self.verticalSpace / 2);
-//         var hLinePosLeft = -1 * leftBlockHalf - self.circleBorderWidth * 2;
-//
-//         //console.log('hLineWidth: ' + hLineWidth + ' / hLinePosLeft: ' + hLinePosLeft);
-//         //горизонтальная линия
-//         this.hline(
-//             row,
-//             hLineWidth,
-//             self.greyColor,
-//             halfHeight,
-//             hLinePosLeft
-//         );
-//         //3 верт линии
-//         this.vline(
-//             row,
-//             self.verticalSpace / 2 + self.circleBorderWidth / 2,
-//             self.greyColor,
-//             halfHeight,
-//             hLinePosLeft
-//         );
-//         this.vline(
-//             row,
-//             self.verticalSpace + self.circleBorderWidth * 2,
-//             self.greyColor,
-//             rowHeight - self.circleBorderWidth,
-//             (leftBlockHalf)
-//         );
-//         this.vline(
-//             row,
-//             self.verticalSpace / 2 + self.circleBorderWidth / 2,
-//             self.greyColor,
-//             halfHeight,
-//             (leftBlockHalf) * 3 + 22
-//         );
-//     },
-//     hline: function(objAppendTo, width, color, top, left) {
-//         $('<div />', {
-//             class:'line',
-//             css: {
-//                 width: width,
-//                 height: this.lineWidth,
-//                 background: color,
-//                 top: top,
-//                 left: left
-//             }
-//         }).appendTo(objAppendTo);
-//     },
-//     vline: function(objAppendTo, height, color, top, left) {
-//         $('<div />', {
-//             class:'line',
-//             css: {
-//                 width: this.lineWidth,
-//                 height: height,
-//                 background: color,
-//                 top: top,
-//                 left: left
-//             }
-//         }).appendTo(objAppendTo);
-//     },
-//     drawLinesMobile: function() {
-//
-//     },
-// };
+
 
 var ajaxActionRun = false;
 function ajaxAction(_url, action, postData, callback, _showLoader, loaderText){

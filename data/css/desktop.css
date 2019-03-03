@@ -13,12 +13,12 @@
   .sch-circle.s {
     margin-top: 50px;
   }
-  .header-fix {
+  .header-fix.fixed {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 9500;
-    height: 168px;
+    z-index: 500;
+    background: #ffffff;
   }
   header {
     background: #ffffff;
